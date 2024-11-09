@@ -158,7 +158,7 @@ function Login() {
                             </label>
                           </div>
                           <div class="d-grid gap-2">
-                                <button type="button" class="btn btn-success">Login</button>
+                                <button type="button" class="btn btn-success"><Link to="/dashboard">Login</Link></button>
                           </div>
 
                           
@@ -228,7 +228,7 @@ function Login() {
                             </label>
                           </div>
                           <div class="d-grid gap-2">
-                                <button type="button" class="btn btn-success">Login</button>
+                                <button type="button" class="btn btn-success"><Link to="/dashboard">Login</Link></button>
                           </div>
 
                         </form>

@@ -1,6 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
+const ForgotPassword = () => {
+  // State to manage the visibility of the forms
+  const [isOtpFormVisible, setIsOtpFormVisible] = useState(false);
+
+  // Initialize useNavigate hook
+  const navigate = useNavigate();
+
+  // Handle Email Form submission
+  const handleEmailSubmit = (e) => {
+    e.preventDefault();
+    setIsOtpFormVisible(true); // Show OTP form and blur the email form
+  };
+
+  // Handle OTP Form submission and redirect to the ChangePassword page
+  const handleOtpSubmit = (e) => {
+    e.preventDefault();
+    setIsOtpFormVisible(false); // Hide OTP form, blur it, or show success message
+
+    // Redirect to ChangePassword page
+    navigate('/changepassword');
+  };
+
+  // UseEffect to dynamically load Bootstrap only for this page
+  useEffect(() => {
+    const bootstrapLink = document.createElement('link');
+    bootstrapLink.rel = 'stylesheet';
+    bootstrapLink.href = 'https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css';
+    bootstrapLink.type = 'text/css';
+    document.head.appendChild(bootstrapLink);
+
+    // Cleanup function to remove Bootstrap CSS when the component is unmounted
+    return () => {
+      document.head.removeChild(bootstrapLink);
+    };
+  }, []);
+
   return (
     <section className="py-5">
       <div className="container form-container">
@@ -21,16 +57,13 @@ const SignUp = () => {
               />
             </div>
             <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" className="btn btn-primary">Submit</button>
             </div>
           </form>
         </div>
 
         {/* OTP Form */}
-        <div
-          id="otp-form"
-          className={`mt-5 ${isOtpFormVisible ? '' : 'blur'}`}
-        >
+        <div id="otp-form" className={`mt-5 ${isOtpFormVisible ? '' : 'blur'}`}>
           <form onSubmit={handleOtpSubmit}>
             <div className="mb-4">
               <input
@@ -47,11 +80,28 @@ const SignUp = () => {
                 Submit OTP
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
-    </>
+      <style>
+        {`
+          /* Blur effect for inactive forms */
+          .blur {
+            filter: blur(4px);
+            opacity: 0.6;
+            pointer-events: none;
+          }
+          
+          /* For alignment and spacing */
+          .form-container {
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+          }
+        `}
+      </style>
+    </section>
   );
 };
 
-export default SignUp;
+export default ForgotPassword;
