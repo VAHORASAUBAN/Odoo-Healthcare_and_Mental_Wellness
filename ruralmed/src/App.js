@@ -1,25 +1,37 @@
 // App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NavBar from './components/navbar'; // Importing NavBar component
-import Appointments from './components/Appointments'; // Import the Appointments component
-import Dashboard from './components/DoctorDashboard'; // Assuming you have a Dashboard component// Assuming you have a Patients component
-import './components/navbar.css';  // Your CSS for NavBar // Your CSS for Patients (if any)
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import NavBar from './components/navbar';
+import Appointments from './components/Appointments';
+import Dashboard from './components/DoctorDashboard';
+import Patients from './components/Patients';
+import Login from './components/DrPatientLogin';
+import './components/navbar.css';
 
 function App() {
+  const location = useLocation();
+
+  return (
+    <div className="container">
+      {/* Only render NavBar if the current path is not "/login" */}
+      {location.pathname !== '/login' && <NavBar />}
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/appointments" element={<Appointments />} />
+        <Route path="/patients" element={<Patients />} />
+        <Route path="/login" element={<Login />} />
+        {/* Add other routes as necessary */}
+      </Routes>
+    </div>
+  );
+}
+
+function AppWrapper() {
   return (
     <Router>
-      <div className="container">
-        <NavBar />
-        <Routes>
-          <Route path="/appointments" element={<Appointments />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          {/* <Route path="/patients" element={<Patients />} /> */}
-          {/* Add other routes as necessary */}
-        </Routes>
-      </div>
+      <App />
     </Router>
   );
 }
 
-export default App;
+export default AppWrapper;
