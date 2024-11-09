@@ -10,11 +10,15 @@ import './components/navbar.css';
 
 function App() {
   const location = useLocation();
+  
+  // Determine if the current route is "/login"
+  const isLoginPage = location.pathname === '/login';
 
   return (
-    <div className="container">
-      {/* Only render NavBar if the current path is not "/login" */}
-      {location.pathname !== '/login' && <NavBar />}
+    // Apply a different class name if on the login page
+    <div className={isLoginPage ? 'login-container' : 'containers'}>
+      {/* Only render NavBar if not on the login page */}
+      {!isLoginPage && <NavBar />}
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/appointments" element={<Appointments />} />

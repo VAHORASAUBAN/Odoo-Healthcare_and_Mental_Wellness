@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import DrLogin from './images/DrLogin.jpg';
+import PatientLogin from './images/patientLogin.jpg';
 
 function Login() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -70,7 +72,7 @@ function Login() {
                     <div className="col-12 col-md-6 image-container">
                       <img
                         className="img-fluid rounded-start w-100 h-100"
-                        src="./1650_U1RVRElPIEtBVCAzNzEtMTM.jpg"
+                        src={PatientLogin}
                         alt="BootstrapBrain Logo"
                       />
                     </div>
@@ -134,7 +136,7 @@ function Login() {
                     <div className="col-12 col-md-6 image-container">
                       <img
                         className="img-fluid rounded-start w-100 h-100"
-                        src="./vecteezy_a-patient-consults-a-doctor-and-nurse_.jpg"
+                        src={DrLogin}
                         alt="Doctor and Nurse"
                       />
                     </div>
