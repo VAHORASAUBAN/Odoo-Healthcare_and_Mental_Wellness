@@ -1,20 +1,23 @@
-import React, { useState } from 'react'; // Import useState
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './navbar.css';
 
 function NavBar() {
-  // State to track the selected upper menu item
-  const [selectedUpper, setSelectedUpper] = useState('dashboard');
-  // State to track the selected lower menu item
-  const [selectedLower, setSelectedLower] = useState('');
+  // Initialize state with values from localStorage or default values
+  const [selectedUpper, setSelectedUpper] = useState(localStorage.getItem('selectedUpper') || 'dashboard');
+  const [selectedLower, setSelectedLower] = useState(localStorage.getItem('selectedLower') || '');
 
-  // Function to handle selection in the upper menu
+  useEffect(() => {
+    // Store selected menus in localStorage whenever they change
+    localStorage.setItem('selectedUpper', selectedUpper);
+    localStorage.setItem('selectedLower', selectedLower);
+  }, [selectedUpper, selectedLower]);
+
   const handleSelectUpper = (menu) => {
     setSelectedUpper(menu);
     setSelectedLower(''); // Reset lower selection on upper selection
   };
 
-  // Function to handle selection in the lower menu
   const handleSelectLower = (menu) => {
     setSelectedLower(menu);
     setSelectedUpper(''); // Reset upper selection on lower selection
@@ -58,8 +61,8 @@ function NavBar() {
             >
               Settings
               <ul className="settings-dropdown">
-                <li>Manage Profile</li>
-                <li>Reset Password</li>
+                <li><Link to="/profile">Manage Profile</Link></li>
+                <li><Link to="/resetpassword">Reset Password</Link></li>
               </ul>
             </li>
             <li
