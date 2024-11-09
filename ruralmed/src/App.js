@@ -11,6 +11,7 @@ import Signup from './components/SignUp';  // Import your Signup component
 import './components/navbar.css';
 import ResetPassword from './components/ResetPassword';
 import Profile from './components/Profile';
+import PatientDetails from './components/PatientDetails';
 
 function App() {
   const location = useLocation();
@@ -39,6 +40,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />  {/* Add the signup route here */}
         <Route path="/resetpassword" element={<ResetPassword />} />  
         <Route path="/profile" element={<Profile />} />  
+        <Route path="/patientdetails" element={<PatientDetails />} />  
         {/* Add other routes as necessary */}
       </Routes>
     </div>
