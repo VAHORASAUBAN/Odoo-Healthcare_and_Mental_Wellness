@@ -1,56 +1,98 @@
-.container {
-    display: flex;
-  }
-  
-  .leftcontainer {
-    width: 20%;
-  }
-  
-  .rightcontainer {
-    width: 80%;
-  }
-  
-  .navbar {
-    background-color: #2c3e50;
-    color: white;
-  }
-  
-  .menus ul, .settings-dropdown {
-    list-style-type: none;
-  }
-  
-  .settings-menu:hover .settings-dropdown {
-    display: block;
-  }
-  
-  .settings-dropdown {
-    display: none;
-    position: absolute;
-    background-color: #34495e;
-  }
-  
-  .appointments-table {
-    margin-top: 20px;
-  }
-  
-  .row {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-  }
-  
-  .header-row {
-    font-weight: bold;
-    background-color: #f4f4f4;
-  }
-  
-  .fa-trash {
-    cursor: pointer;
-    color: red;
-  }
-  
-  .profile img {
-    width: 50px;
-    border-radius: 50%;
-  }
-  
+.rightcontainer{
+  width: 100%;
+  margin: 2vh;
+}
+
+.profile{
+  display: flex;
+  /* flex-direction: row; */
+  width: 100%;
+  justify-content: end;
+  cursor: pointer;
+}
+
+.profile img{
+  height: 6vh;
+  width: auto;
+}
+
+.profile p{
+  margin: .9vh 2vh 0 0;
+  font-size: 3.5vh;
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header p{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.sub-header{
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+  justify-content: space-between;
+  margin: 3vh 0 0 0;
+}
+
+.sub-header img{
+  height: 3vh;
+  width: auto;
+  cursor: pointer;
+  margin: .6vh 0 0 0;
+}
+
+.sub-header p{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.appointments-table{
+  width: 70%;
+  margin: 3vh 0 0 20vh;
+}
+
+.appointments-table {
+  width: 70%;
+  margin: 3vh 0 0 20vh;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin: 2vh 0 0 0;
+  align-items: center; /* Aligns content vertically in each row */
+}
+
+.row p {
+  margin: 0;
+  padding: 0 1vw;
+}
+
+.row i{
+  color: rgb(247, 48, 48);
+}
+
+.row:first-child p {
+  font-weight: bold;
+}
+
+.row p:nth-child(1) { /* ID Code */
+  flex-basis: 20%;
+}
+
+.row p:nth-child(2) { /* Name */
+  flex-basis: 30%;
+}
+
+.row p:nth-child(3) { /* Date/Time */
+  flex-basis: 30%;
+}
+
+.row p:nth-child(4) { /* Date/Time */
+  flex-basis: 10%;
+}
