@@ -1,0 +1,155 @@
+.profile-icon {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #65cccc;
+    transition: all 0.3s ease;
+}
+
+.profile-pic:hover {
+    opacity: 0.8;
+}
+
+.profile-icon .dropdown {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    z-index: 100;
+}
+
+.profile-icon:hover .dropdown {
+    display: block;
+}
+
+.profile-icon .dropdown ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.profile-icon .dropdown ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profile-icon .dropdown ul li:hover {
+    background-color: #f0f0f0;
+}
+
+.rightContainer {
+    padding: 20px;
+    width: 84%;
+    background-color: #f8f9fa;
+}
+
+.header h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.patient-details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.patient-details-section,
+.appointment-history-section,
+.prescription-history-section,
+.messages-notes-section,
+.upcoming-appointments-section,
+.doctor-actions-section {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.details-item,
+.appointment-item,
+.prescription-item,
+.message-item {
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    resize: none;
+    background-color: #f8f9fa;
+}
+
+textarea:focus {
+    border-color: #65cccc;
+    outline: none;
+}
+
+/* Compact Section */
+.compact-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Styling for smaller sections */
+.appointment-history-section,
+.prescription-history-section {
+    width: 48%;
+}
+
+.messages-notes-section,
+.upcoming-appointments-section {
+    width: 48%;
+}
+
+/* Smaller Cards */
+.details-item,
+.appointment-item,
+.prescription-item,
+.message-item {
+    background-color: #e3f2fd;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .compact-section {
+        flex-direction: column;
+    }
+
+    .appointment-history-section,
+    .prescription-history-section,
+    .messages-notes-section,
+    .upcoming-appointments-section {
+        width: 100%;
+    }
+}
