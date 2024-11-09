@@ -1,6 +1,11 @@
 // NavBar.js
 import React from 'react';
+<<<<<<< HEAD
 import '../App.css'; 
+=======
+import { Link } from 'react-router-dom';
+import './navbar.css'; 
+>>>>>>> c006b8aebb44e1edca8fe26852b72ab0cfdaf52f
 
 function NavBar() {
   return (
@@ -12,8 +17,8 @@ function NavBar() {
           </div>
           <div className="menus">
             <ul>
-              <li>Dashboard</li>
-              <li>Appointments</li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
+              <li><Link to="/appointments">Appointments</Link></li>
               <li>Patients</li>
             </ul>
           </div>

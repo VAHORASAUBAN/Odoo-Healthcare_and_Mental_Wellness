@@ -1,13 +1,12 @@
-// Appointments.js
 import React from 'react';
-import '../App.css'; 
+import './appointments.css'; // Ensure you have the appropriate styles for this component
 
-function Appointments() {
+const Appointments = () => {
   return (
-    <div className="rightContainer">
+    <div className="rightcontainer">
       <div className="profile">
         <p>John Doe</p>
-        <img src="/images/account.png" alt="Profile" />
+        <img src={accountImg} alt="Profile" />
       </div>
       <div className="header">
         <div className="main-header">
@@ -15,11 +14,11 @@ function Appointments() {
         </div>
         <div className="sub-header">
           <span className="backword">
-            <img src="/images/less-than-symbol.png" alt="Back" />
+            <img src={backIcon} alt="Previous" />
           </span>
           <p>August 2023</p>
           <span className="forward">
-            <img src="/images/greater-than-symbol.png" alt="Forward" />
+            <img src={forwardIcon} alt="Next" />
           </span>
         </div>
       </div>
@@ -30,23 +29,116 @@ function Appointments() {
           <p>Date/Time</p>
           <p>Action</p>
         </div>
-        {/* Repeat appointment rows */}
-        <div className="row">
-          <p>1000510</p>
-          <p>John Doe</p>
-          <p>3/10/2024, 11:00 AM</p>
-          <p><i className="fa-solid fa-trash"></i></p>
-        </div>
-        <div className="row">
-          <p>1000510</p>
-          <p>Ayan Husain Shaikh</p>
-          <p>3/10/2024, 1:00 PM</p>
-          <p><i className="fa-solid fa-trash"></i></p>
-        </div>
-        {/* More rows can be added similarly */}
+        {[...Array(8)].map((_, index) => (
+          <div className="row" key={index}>
+            <p>1000510</p>
+            <p>Ayan Husain Shaikh</p>
+            <p>3/10/2024, 1:00 PM</p>
+            <p>
+              <i className="fa-solid fa-trash"></i>
+            </p>
+          </div>
+        ))}
       </div>
+
+      <style>
+        {`
+          .rightcontainer {
+            width: 100%;
+            margin: 2vh;
+          }
+
+          .profile {
+            display: flex;
+            width: 100%;
+            justify-content: end;
+            cursor: pointer;
+          }
+
+          .profile img {
+            height: 6vh;
+            width: auto;
+          }
+
+          .profile p {
+            margin: .9vh 2vh 0 0;
+            font-size: 3.5vh;
+          }
+
+          .header {
+            display: flex;
+            flex-direction: column;
+          }
+
+          .main-header p {
+            font-size: 25px;
+            font-weight: bold;
+          }
+
+          .sub-header {
+            display: flex;
+            flex-direction: row;
+            width: 20%;
+            justify-content: space-between;
+            margin: 3vh 0;
+          }
+
+          .sub-header img {
+            height: 3vh;
+            width: auto;
+            cursor: pointer;
+            margin: .6vh 0;
+          }
+
+          .sub-header p {
+            font-size: 18px;
+            font-weight: 500;
+          }
+
+          .appointments-table {
+            width: 70%;
+            margin: 3vh 0 0 20vh;
+          }
+
+          .row {
+            display: flex;
+            flex-direction: row;
+            margin: 2vh 0;
+            align-items: center;
+          }
+
+          .row p {
+            margin: 0;
+            padding: 0 1vw;
+          }
+
+          .row i {
+            color: rgb(247, 48, 48);
+          }
+
+          .row:first-child p {
+            font-weight: bold;
+          }
+
+          .row p:nth-child(1) {
+            flex-basis: 20%;
+          }
+
+          .row p:nth-child(2) {
+            flex-basis: 30%;
+          }
+
+          .row p:nth-child(3) {
+            flex-basis: 30%;
+          }
+
+          .row p:nth-child(4) {
+            flex-basis: 10%;
+          }
+        `}
+      </style>
     </div>
   );
-}
+};
 
 export default Appointments;
