@@ -1,9 +1,25 @@
-// NavBar.js
-import React from 'react';
+import React, { useState } from 'react'; // Import useState
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import './navbar.css'; 
+import './navbar.css';
 
 function NavBar() {
+  // State to track the selected upper menu item
+  const [selectedUpper, setSelectedUpper] = useState('dashboard');
+  // State to track the selected lower menu item
+  const [selectedLower, setSelectedLower] = useState('');
+
+  // Function to handle selection in the upper menu
+  const handleSelectUpper = (menu) => {
+    setSelectedUpper(menu);
+    setSelectedLower(''); // Reset lower selection on upper selection
+  };
+
+  // Function to handle selection in the lower menu
+  const handleSelectLower = (menu) => {
+    setSelectedLower(menu);
+    setSelectedUpper(''); // Reset upper selection on lower selection
+  };
+
   return (
     <div className="leftcontainer">
       <div className="navbar">
@@ -13,23 +29,45 @@ function NavBar() {
           </div>
           <div className="menus">
             <ul>
-              <li><Link to="/dashboard">Dashboard</Link></li> {/* Link to Dashboard */}
-              <li><Link to="/appointments">Appointments</Link></li> {/* Link to Appointments */}
-              <li>Patients</li> {/* Link to Patients */}
+              <li
+                className={selectedUpper === 'dashboard' ? 'selected' : ''}
+                onClick={() => handleSelectUpper('dashboard')}
+              >
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
+              <li
+                className={selectedUpper === 'appointments' ? 'selected' : ''}
+                onClick={() => handleSelectUpper('appointments')}
+              >
+                <Link to="/appointments">Appointments</Link>
+              </li>
+              <li
+                className={selectedUpper === 'patients' ? 'selected' : ''}
+                onClick={() => handleSelectUpper('patients')}
+              >
+                <Link to="/patients">Patients</Link>
+              </li>
             </ul>
           </div>
         </div>
         <div className="lower">
           <ul>
-            <li className="settings-menu">
+            <li
+              className={`settings-menu ${selectedLower === 'settings' ? 'selected' : ''}`}
+              onClick={() => handleSelectLower('settings')}
+            >
               Settings
               <ul className="settings-dropdown">
                 <li>Manage Profile</li>
                 <li>Reset Password</li>
-                <li>Notifications Settings</li>
               </ul>
             </li>
-            <li>Logout</li>
+            <li
+              className={selectedLower === 'logout' ? 'selected' : ''}
+              onClick={() => handleSelectLower('logout')}
+            >
+              Logout
+            </li>
           </ul>
         </div>
       </div>
