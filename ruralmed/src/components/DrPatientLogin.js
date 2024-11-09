@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';  // Import Link for routing
 import DrLogin from './images/DrLogin.jpg';
 import PatientLogin from './images/patientLogin.jpg';
 
@@ -127,8 +128,8 @@ function Login() {
                         </form>
                         <hr className="mt-5 mb-4 border-secondary-subtle" />
                         <div className="d-flex gap-2 justify-content-md-end">
-                          <a href="#!" className="link-secondary">Create new account ?</a>
-                          <a href="#!" className="link-secondary">Forgot password ?</a>
+                          <Link to="/signup" className="link-secondary">Create new account ?</Link>
+                          <Link to="/forgotpassword" className="link-secondary">Forgot password ?</Link>
                           <a href="#!" onClick={handleFlip} className="link-secondary">
                             Or If Doctor ? →
                           </a>
@@ -191,8 +192,8 @@ function Login() {
                         </form>
                         <hr className="mt-5 mb-4 border-secondary-subtle" />
                         <div className="d-flex gap-2 justify-content-md-end">
-                          <a href="#!" className="link-secondary">Want Credentials ?</a>
-                          <a href="#!" className="link-secondary">Forgot password ?</a>
+                          <Link to="/signup" className="link-secondary">Want Credentials ?</Link>
+                          <Link to="/forgotpassword" className="link-secondary">Forgot password ?</Link>
                           <a href="#!" onClick={handleFlip} className="link-secondary">
                             Or If Patient ? →
                           </a>
