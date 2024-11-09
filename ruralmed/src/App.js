@@ -1,21 +1,56 @@
 import React from 'react';
-import NavBar from './components/navbar'; // Importing NavBar component
-import Appointments from './components/appointments'; // Import the Appointments component
-import './components/navbar.css';  // Your CSS for NavBar
-import './components/appointments.css';
-
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-/>
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import NavBar from './components/navbar';
+import Appointments from './components/Appointments';
+import Dashboard from './components/DoctorDashboard';
+import Patients from './components/Patients';
+import Login from './components/DrPatientLogin';
+import ForgotPassword from './components/ForgotPassword';
+import ChangePassword from './components/PasswordChange';
+import Signup from './components/SignUp';  // Import your Signup component
+import './components/navbar.css';
+import ResetPassword from './components/ResetPassword';
+import Profile from './components/Profile';
 
 function App() {
+  const location = useLocation();
+
+  // Determine if the current route is "/login", "/forgotpassword", "/changepassword", or "/signup"
+  const isAuthPage = 
+    location.pathname === '/login' ||
+    location.pathname === '/forgotpassword' ||
+    location.pathname === '/changepassword' ||
+    location.pathname === '/signup' ||
+    location.pathname === '/resetpassword';
+      // Include '/signup' in the check
+
   return (
-    <div className="container">
-      <NavBar /> 
-      <Appointments /> 
+    // Apply a different class name if on any of the authentication-related pages
+    <div className={isAuthPage ? 'auth-container' : 'containers'}>
+      {/* Only render NavBar if not on the authentication-related pages */}
+      {!isAuthPage && <NavBar />}
+      <Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/appointments" element={<Appointments />} />
+        <Route path="/patients" element={<Patients />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/changepassword" element={<ChangePassword />} />
+        <Route path="/signup" element={<Signup />} />  {/* Add the signup route here */}
+        <Route path="/resetpassword" element={<ResetPassword />} />  
+        <Route path="/profile" element={<Profile />} />  
+        {/* Add other routes as necessary */}
+      </Routes>
     </div>
   );
 }
 
-export default App;
+function AppWrapper() {
+  return (
+    <Router>
+      <App />
+    </Router>
+  );
+}
+
+export default AppWrapper;
