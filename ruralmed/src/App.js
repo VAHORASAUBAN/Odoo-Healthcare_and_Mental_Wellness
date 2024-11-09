@@ -13,6 +13,10 @@ import ResetPassword from './Doctors/ResetPassword';
 import Profile from './Doctors/Profile';
 import PatientDetails from './Doctors/PatientDetails';
 import FindDoctors from './patients/FindDoctors';
+import PatientDashboard from './patients/PatientDashboard';
+import GetAppointments from './patients/GetAppointments';
+import PatientProfile from './patients/PatientProfile';
+// import Home from './components/Home';
 
 function App() {
   const location = useLocation();
@@ -42,7 +46,11 @@ function App() {
         <Route path="/resetpassword" element={<ResetPassword />} />  
         <Route path="/profile" element={<Profile />} />  
         <Route path="/patientdetails" element={<PatientDetails />} />  
-        <Route path="/finddoctor" element={<FindDoctors />} />  
+        <Route path="/finddoctor" element={<FindDoctors />} />
+        <Route path="/Patient/Dashboard" element={<PatientDashboard />} />
+        <Route path="/Patient/GetAppointment" element={<GetAppointments />} />
+        <Route path="/Patient/Profile" element={<PatientProfile />} />
+        {/* <Route path="/home" element={<Home />} /> */}
         {/* Add other routes as necessary */}
       </Routes>
     </div>

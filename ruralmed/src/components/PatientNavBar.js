@@ -36,7 +36,7 @@ function PatientNavBar() {
                 className={selectedUpper === 'dashboard' ? 'selected' : ''}
                 onClick={() => handleSelectUpper('dashboard')}
               >
-                <Link to="/PatientDashboard">Dashboard</Link>
+                <Link to="/Patient/Dashboard">Dashboard</Link>
               </li>
               <li
                 className={selectedUpper === 'appointments' ? 'selected' : ''}
@@ -72,7 +72,7 @@ function PatientNavBar() {
             >
               Settings
               <ul className="settings-dropdown">
-                <li><Link to="/profile">Manage Profile</Link></li>
+                <li><Link to="/Patient/Profile">Manage Profile</Link></li>
                 <li><Link to="/resetpassword">Reset Password</Link></li>
               </ul>
             </li>
