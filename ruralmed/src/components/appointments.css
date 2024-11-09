@@ -1,98 +1,133 @@
-.rightcontainer{
-  width: 100%;
-  margin: 2vh;
+/* appointments.css */
+
+.appointments-container {
+  width: 90%;
+  margin: 3vh auto;
+  padding: 2vh;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.profile{
+.profile {
   display: flex;
-  /* flex-direction: row; */
-  width: 100%;
-  justify-content: end;
+  justify-content: flex-end;
+  align-items: center;
   cursor: pointer;
+  padding: 1vh;
 }
 
-.profile img{
+.profile img {
   height: 6vh;
   width: auto;
+  margin-left: 1vh;
 }
 
-.profile p{
-  margin: .9vh 2vh 0 0;
-  font-size: 3.5vh;
+.profile p {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
 }
 
-.header{
-  display: flex;
-  flex-direction: column;
+.header {
+  text-align: center;
+  margin: 3vh 0;
 }
 
-.main-header p{
-  font-size: 25px;
+.main-header p {
+  font-size: 2rem;
   font-weight: bold;
+  color: #000000;
 }
 
-.sub-header{
+.sub-header {
   display: flex;
-  flex-direction: row;
-  width: 20%;
-  justify-content: space-between;
-  margin: 3vh 0 0 0;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1vh;
 }
 
-.sub-header img{
+.sub-header img {
   height: 3vh;
   width: auto;
   cursor: pointer;
-  margin: .6vh 0 0 0;
+  transition: transform 0.2s;
 }
 
-.sub-header p{
-  font-size: 18px;
+.sub-header img:hover {
+  transform: scale(1.1);
+}
+
+.sub-header p {
+  font-size: 1.25rem;
   font-weight: 500;
-}
-
-.appointments-table{
-  width: 70%;
-  margin: 3vh 0 0 20vh;
+  margin: 0 1vh;
 }
 
 .appointments-table {
-  width: 70%;
-  margin: 3vh 0 0 20vh;
+  width: 80%;
+  margin: 2vh auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 
 .row {
   display: flex;
-  flex-direction: row;
-  margin: 2vh 0 0 0;
-  align-items: center; /* Aligns content vertically in each row */
+  align-items: center;
+  padding: 1.5vh;
+}
+
+.header-row {
+  background-color: #012f33;
+  color: #fff;
+  font-weight: bold;
+}
+
+.data-row {
+  transition: background-color 0.2s;
+}
+
+.data-row:hover {
+  background-color: #f0f8ff;
 }
 
 .row p {
   margin: 0;
   padding: 0 1vw;
+  font-size: 1rem;
 }
 
-.row i{
+.row i {
   color: rgb(247, 48, 48);
+  cursor: pointer;
+  transition: color 0.2s;
 }
 
-.row:first-child p {
-  font-weight: bold;
+.row i:hover {
+  color: #d32f2f;
 }
 
-.row p:nth-child(1) { /* ID Code */
-  flex-basis: 20%;
+.delete-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
 }
 
-.row p:nth-child(2) { /* Name */
-  flex-basis: 30%;
+.header-row p {
+  flex-basis: 25%;
+  font-size: 1.1rem;
 }
 
-.row p:nth-child(3) { /* Date/Time */
-  flex-basis: 30%;
+.data-row p:nth-child(1), /* ID Code */
+.data-row p:nth-child(2), /* Name */
+.data-row p:nth-child(3) { /* Date/Time */
+  flex-basis: 25%;
 }
 
-.row p:nth-child(4) { /* Date/Time */
+.data-row p:nth-child(4) { /* Action */
   flex-basis: 10%;
+  text-align: center;
 }
