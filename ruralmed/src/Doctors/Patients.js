@@ -3,6 +3,7 @@ import './Patients.css';
 import accountImg from './images/account.png';
 import patientImage from './images/patients.avif';
 import { Link } from 'react-router-dom';
+import NavBar from '../components/navbar'
 
 const Patients = () => {
     // Sample data for patients
@@ -16,6 +17,8 @@ const Patients = () => {
     ];
 
     return (
+        <>
+        <NavBar />
         <div className="rightcontainer">
             <div className="background">
                 <img src={patientImage} alt="Patients Background" />
@@ -46,6 +49,7 @@ const Patients = () => {
                 ))}
             </div>
         </div>
+        </>
     );
 };
 

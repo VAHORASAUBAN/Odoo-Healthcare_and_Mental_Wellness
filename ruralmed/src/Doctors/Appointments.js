@@ -1,4 +1,5 @@
 import React from 'react';
+import NavBar from '../components/navbar'
 import './Appointments.css';
 import accountImg from './images/account.png';
 import backIcon from './images/less-than-symbol.png';
@@ -6,6 +7,8 @@ import forwardIcon from './images/greater-than-symbol.png';
 
 function Appointments() {
   return (
+    <>
+    <NavBar />
     <div className="appointments-container">
       <div className="profile">
         <p>John Doe</p>
@@ -42,6 +45,7 @@ function Appointments() {
         ))}
       </div>
     </div>
+    </>
   );
 }
 

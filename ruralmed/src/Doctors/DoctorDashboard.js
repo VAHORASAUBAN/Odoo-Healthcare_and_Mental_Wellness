@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';  // Importing icons
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import NavBar from '../components/navbar'  // Importing icons
 
 const DoctorDashboard = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -222,7 +223,7 @@ const DoctorDashboard = () => {
               border-radius: 50%;
           }
       `}</style>
-
+      <NavBar />
       <div className="rightContainer">
         <div className="profile-icon">
           <img src="profile.jpg" alt="Profile" className="profile-pic" />
