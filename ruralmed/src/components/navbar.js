@@ -1,6 +1,6 @@
 // NavBar.js
 import React from 'react';
-import '../App.css'; 
+import './navbar.css'; 
 
 function NavBar() {
   return (
@@ -12,8 +12,8 @@ function NavBar() {
           </div>
           <div className="menus">
             <ul>
-              <li>Dashboard</li>
-              <li>Appointments</li>
+            <li><Link to="/dashboard">Dashboard</Link></li>
+              <li><Link to="/appointments">Appointments</Link></li>
               <li>Patients</li>
             </ul>
           </div>
