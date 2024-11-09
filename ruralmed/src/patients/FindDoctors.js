@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './FindDoctors.css'
 import PatientNavBar from '../components/PatientNavBar'
 
@@ -40,7 +41,7 @@ export default function FindDoctors() {
               <div className="FindDoctors__extra-info">
                 <p className="FindDoctors__location"><strong>Location:</strong> Ahmedabad</p>
                 <p className="FindDoctors__speciality"><strong>Speciality:</strong> Neurology</p>
-                <button className="FindDoctors__appointment-btn">Book an appointment</button>
+                <button className="FindDoctors__appointment-btn"><Link to='/Patient/GetAppointment'>Book an appointment</Link></button>
               </div>
             </div>
           ))}

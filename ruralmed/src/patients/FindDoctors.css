@@ -172,3 +172,15 @@
 .FindDoctors__appointment-btn:hover {
     background-color: #025157;
 }
+
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: #FFFFFF;
+}
+
+a:active{
+    color: #FFFFFF;
+}

@@ -1,0 +1,118 @@
+.rightContainer {
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.doctor-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.doctor-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header button {
+    background-color: #ddd;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin: 5vh 0 0 0;
+}
+
+.day {
+    width: 40px;
+    height: 40px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.day:hover:not(.selected) {
+    background-color: #ddd;
+}
+
+.day.disabled {
+    background-color: #f0f0f0;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.day.selected {
+    background-color: #012f33;
+    color: white !important;
+}
+
+/* Time Slots */
+.time-selection {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.time-selection h3 {
+    margin-bottom: 10px;
+}
+
+.time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.time-slot {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.time-slot.selected {
+    background-color: #012f33;
+    color: white !important;
+}
+
+.time-slot:hover:not(.selected) {
+    background-color: #ddd;
+}
+
+.time-slot.disabled {
+    background-color: #f0f0f0;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.confirm-button button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #012f33;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.confirm-button button:hover {
+    background-color: #065b61;
+}
