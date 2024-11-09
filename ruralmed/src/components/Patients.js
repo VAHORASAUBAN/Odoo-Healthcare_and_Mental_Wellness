@@ -2,6 +2,7 @@ import React from 'react';
 import './Patients.css';
 import accountImg from './images/account.png';
 import patientImage from './images/patients.avif';
+import { Link } from 'react-router-dom';
 
 const Patients = () => {
     // Sample data for patients
@@ -37,7 +38,7 @@ const Patients = () => {
             <div className="patientContainer">
                 {patients.map((patient) => (
                     <div className="patient" key={patient.id}>
-                        <img src={accountImg} alt={`${patient.name} Profile`} />
+                        <Link to='/patientdetails'><img src={accountImg} alt={`${patient.name} Profile`} /></Link>
                         <p>{patient.name}</p>
                         <p>{patient.gender}</p>
                         <p>Age: {patient.age}</p>
