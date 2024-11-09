@@ -1,9 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DrLogin from './images/DrLogin.jpg';
 import PatientLogin from './images/patientLogin.jpg';
 
 function Login() {
   const [isFlipped, setIsFlipped] = useState(false);
+
+  // UseEffect to dynamically load Bootstrap only for this page
+  useEffect(() => {
+    const bootstrapLink = document.createElement('link');
+    bootstrapLink.rel = 'stylesheet';
+    bootstrapLink.href = 'https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css';
+    bootstrapLink.type = 'text/css';
+    document.head.appendChild(bootstrapLink);
+
+    // Cleanup function to remove Bootstrap CSS when the component is unmounted
+    return () => {
+      document.head.removeChild(bootstrapLink);
+    };
+  }, []); // Empty dependency array to run only once when the component mounts
 
   const handleFlip = (e) => {
     e.preventDefault();
@@ -73,7 +87,7 @@ function Login() {
                       <img
                         className="img-fluid rounded-start w-100 h-100"
                         src={PatientLogin}
-                        alt="BootstrapBrain Logo"
+                        alt="Patient Login"
                       />
                     </div>
                     <div className="col-12 col-md-6 login-container">
@@ -137,7 +151,7 @@ function Login() {
                       <img
                         className="img-fluid rounded-start w-100 h-100"
                         src={DrLogin}
-                        alt="Doctor and Nurse"
+                        alt="Doctor Login"
                       />
                     </div>
                     <div className="col-12 col-md-6 login-container">
