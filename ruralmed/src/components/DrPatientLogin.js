@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';  // Import Link for routing
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';  // Import Link for routing and useNavigate for redirection
 import DrLogin from './images/DrLogin.jpg';
 import PatientLogin from './images/patientLogin.jpg';
 
 function Login() {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);  // Track login state
+  const navigate = useNavigate();
 
   // UseEffect to dynamically load Bootstrap only for this page
   useEffect(() => {
@@ -20,9 +24,27 @@ function Login() {
     };
   }, []); // Empty dependency array to run only once when the component mounts
 
+  // Redirect to dashboard if logged in
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate('/dashboard');  // Redirect to dashboard after login
+    }
+  }, [isLoggedIn, navigate]);
+
   const handleFlip = (e) => {
     e.preventDefault();
     setIsFlipped(!isFlipped);
+  };
+
+  // Handle login form submission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simple validation for email and password (you can replace this with actual authentication logic)
+    if (email && password) {
+      setIsLoggedIn(true);  // Set login state to true
+    } else {
+      alert('Please fill in both fields.');
+    }
   };
 
   return (
@@ -73,12 +95,21 @@ function Login() {
           .flip .back .login-container {
             transform: translateX(-100%);
           }
+          a:active {
+            color: #FFFFFF;
+        }
+        a:visited {
+            color: #FFFFFF;
+        }
+        a{
+            text-decoration: none;    
+        }
         `}
       </style>
 
       <section className={`flip-container ${isFlipped ? 'flip' : ''}`}>
         <div className="flipper">
-          {/* Front Side */}
+          {/* Front Side - Patient Login  */}
           <div className="front">
             <section className="p-3 p-md-4 p-xl-5">
               <div className="container">
@@ -94,7 +125,7 @@ function Login() {
                     <div className="col-12 col-md-6 login-container">
                       <div className="card-body p-3 p-md-4 p-xl-5">
                         <h3>Log in</h3>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                           <label className="form-label">
                             Email <span className="text-danger">*</span>
                           </label>
@@ -103,6 +134,8 @@ function Login() {
                             className="form-control"
                             placeholder="name@example.com"
                             required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                           />
                           <label className="form-label">
                             Password <span className="text-danger">*</span>
@@ -111,6 +144,8 @@ function Login() {
                             type="password"
                             className="form-control"
                             required
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                           />
                           <div className="form-check">
                             <input
@@ -123,7 +158,7 @@ function Login() {
                             </label>
                           </div>
                           <div class="d-grid gap-2">
-                                <button type="button" class="btn btn-success">Login</button>
+                                <button type="button" class="btn btn-success"><Link to="/dashboard">Login</Link></button>
                           </div>
 
                           
@@ -144,7 +179,7 @@ function Login() {
             </section>
           </div>
 
-          {/* Back Side */}
+          {/* Back Side - Doctor Login */}
           <div className="back">
             <section className="p-3 p-md-4 p-xl-5">
               <div className="container">
@@ -160,7 +195,7 @@ function Login() {
                     <div className="col-12 col-md-6 login-container">
                       <div className="card-body p-3 p-md-4 p-xl-5">
                         <h3>Doctor Log in</h3>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                           <label className="form-label">
                             Email <span className="text-danger">*</span>
                           </label>
@@ -169,6 +204,8 @@ function Login() {
                             className="form-control"
                             placeholder="name@example.com"
                             required
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                           />
                           <label className="form-label">
                             Password <span className="text-danger">*</span>
@@ -177,6 +214,8 @@ function Login() {
                             type="password"
                             className="form-control"
                             required
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                           />
                           <div className="form-check">
                             <input
@@ -189,7 +228,7 @@ function Login() {
                             </label>
                           </div>
                           <div class="d-grid gap-2">
-                                <button type="button" class="btn btn-success">Login</button>
+                                <button type="button" class="btn btn-success"><Link to="/dashboard">Login</Link></button>
                           </div>
 
                         </form>

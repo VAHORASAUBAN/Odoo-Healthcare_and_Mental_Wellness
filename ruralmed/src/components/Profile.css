@@ -1,0 +1,115 @@
+.rightcontainer{
+    width: 100%;
+    margin: 2vh;
+}
+
+.profile{
+    display: flex;
+    /* flex-direction: row; */
+    width: 100%;
+    justify-content: end;
+    cursor: pointer;
+}
+
+.profile img{
+    height: 6vh;
+    width: auto;
+}
+
+.profile p{
+    margin: .9vh 2vh 0 0;
+    font-size: 3.5vh;
+}
+
+.main-header p{
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.pinfo{
+    margin: 5vh 0 0 0;
+    font-size: 26px;
+}
+
+.upperInfo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    /* justify-content: space-evenly; */
+}
+
+.upperInfo .profileInfo{
+    flex-direction: column;
+    width: 20%;
+    margin: 5vh 0 0 0;
+}
+
+.upperInfo .profileInfo img{
+    width: 40%;
+    height: auto;
+    margin: 2vh;
+}
+
+.upperInfo .info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 0 0 5vh;
+}
+
+
+.col{
+    display: flex;
+    flex-direction: column;
+    margin: 3vh;
+}
+
+.col input{
+    height: 5vh;
+    width: 35vh;
+    padding: .5vh;
+    margin: 2vh 0 0 0;
+    outline: none;
+    font-size: 18px;
+}
+
+.col input::placeholder{
+    font-size: 18px;
+    align-items: center;
+}
+
+.lowerInfo{
+    display: flex;
+    flex-direction: column;
+}
+
+.lowerInfo .info{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 0 0 5vh;
+}
+
+.updateDetails{
+    display: flex;
+    margin: 3vh 0 0 0;
+    width: 90%;
+    justify-content: end;
+}
+
+.updateDetails button{
+    cursor: pointer;
+    width: 20vh;
+    height: 7vh;
+    font-size: 18px;
+    color: #FFFFFF;
+    background: #012f33;
+    border: none;
+    text-align: center;
+}
+
+label{
+    font-size: 18px;
+}

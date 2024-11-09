@@ -35,7 +35,7 @@ const ForgotPassword = () => {
     return () => {
       document.head.removeChild(bootstrapLink);
     };
-  }, []); // Empty dependency array to run only once when the component mounts
+  }, []);
 
   return (
     <section className="py-5">
@@ -57,16 +57,13 @@ const ForgotPassword = () => {
               />
             </div>
             <div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" className="btn btn-primary">Submit</button>
             </div>
           </form>
         </div>
 
         {/* OTP Form */}
-        <div
-          id="otp-form"
-          className={`mt-5 ${isOtpFormVisible ? '' : 'blur'}`}
-        >
+        <div id="otp-form" className={`mt-5 ${isOtpFormVisible ? '' : 'blur'}`}>
           <form onSubmit={handleOtpSubmit}>
             <div className="mb-4">
               <input
@@ -86,8 +83,6 @@ const ForgotPassword = () => {
           </form>
         </div>
       </div>
-
-      {/* Styles */}
       <style>
         {`
           /* Blur effect for inactive forms */
