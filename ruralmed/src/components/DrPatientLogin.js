@@ -157,9 +157,11 @@ function Login() {
                               Keep me logged in
                             </label>
                           </div>
-                          <button type="submit" className="btn btn-primary bsb-btn-xl d-grid">
-                            Log in
-                          </button>
+                          <div class="d-grid gap-2">
+                                <button type="button" class="btn btn-success">Login</button>
+                          </div>
+
+                          
                         </form>
                         <hr className="mt-5 mb-4 border-secondary-subtle" />
                         <div className="d-flex gap-2 justify-content-md-end">
@@ -225,9 +227,10 @@ function Login() {
                               Keep me logged in
                             </label>
                           </div>
-                          <button type="submit" className="btn btn-primary bsb-btn-xl d-grid">
-                            Dashboard
-                          </button>
+                          <div class="d-grid gap-2">
+                                <button type="button" class="btn btn-success">Login</button>
+                          </div>
+
                         </form>
                         <hr className="mt-5 mb-4 border-secondary-subtle" />
                         <div className="d-flex gap-2 justify-content-md-end">
