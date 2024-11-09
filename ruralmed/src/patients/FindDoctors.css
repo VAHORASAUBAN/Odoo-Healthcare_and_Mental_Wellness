@@ -1,13 +1,9 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-.rightContainer{
+
+.FindDoctors__rightContainer{
     width: 100%;
 }
 
-.header{
+.FindDoctors__header{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -15,18 +11,18 @@
     margin: 5vh 0 0 0;
 }
 
-.header .main-header{
+.FindDoctors__header .FindDoctors__main-header{
     font-size: 32px;
     font-weight: bold;
     margin: 0 0 2vh 0;
 }
 
-.header .sub-header{
+.FindDoctors__header .FindDoctors__sub-header{
     font-size: 22px;
     /* font-weight: bold; */
 }
 
-.search{
+.FindDoctors__search{
     width: 55%;
     display: flex;
     flex-direction: column;
@@ -42,32 +38,32 @@
     -o-border-radius: 5vh;
 }
 
-.search .upper{
+.FindDoctors__search .FindDoctors__upper{
     font-size: 20px;
     text-align: center;
     margin: 3vh;
 }
 
-.search .lower{
-    margin: 2vh 3vh;
+.FindDoctors__search .FindDoctors__lower{
+    margin: 2vh 3vh 3vh 3vh;
 }
 
-.search .lower input{
+.FindDoctors__search .FindDoctors__lower input{
     height: 5vh;
     width: 35vh;
     font-size: 18px;
     /* cursor: pointer; */
 }
 
-.search .lower input::placeholder{
+.FindDoctors__search .FindDoctors__lower input::placeholder{
     font-size: 18px;
     padding: 2vh;
     outline: #012f33;
 }
 
-.search .lower button{
-    height: 6vh;
-    width: 25vh;
+.FindDoctors__search .FindDoctors__lower button{
+    height: 5.5vh;
+    width: 22vh;
     cursor: pointer;
     background: #012f33;
     border: none;
@@ -75,7 +71,7 @@
     color: #FFFFFF;
 }
 
-.doctorContainer {
+.FindDoctors__doctorContainer {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -83,7 +79,7 @@
     justify-content: center;
 }
 
-.doctors {
+.FindDoctors__doctors {
     width: 25%;
     cursor: pointer;
     padding: 3vh;
@@ -102,64 +98,64 @@
     -o-transition: all .7s ease-in-out;
 }
 
-.doctor-main{
+.FindDoctors__doctor-main{
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.doctors:hover{
+.FindDoctors__doctors:hover{
     width: 35%;
     flex-direction: row; /* Adjust as needed for expansion */
 }
 
-.doctors:hover .specializations{
+.FindDoctors__doctors:hover .FindDoctors__specializations{
     display: none;
 }
 
-.doctors img {
+.FindDoctors__doctors img {
     width: 50%;
     height: auto;
 }
 
-.name {
+.FindDoctors__name {
     font-size: 24px;
     margin: 2vh 0 1vh 0;
     font-weight: 600;
 }
 
-.specializations {
+.FindDoctors__specializations {
     font-size: 20px;
 }
 
-.extra-info {
+.FindDoctors__extra-info {
     display: none;
     flex-direction: column;
     align-items: center;
     margin-top: 2vh;
 }
 
-.extra-info img{
+.FindDoctors__extra-info img{
     width: 10%;
     height: auto;
 }
 
-.doctors:hover .extra-info {
+.FindDoctors__doctors:hover .FindDoctors__extra-info {
     display: flex;
 }
 
-.location, .speciality {
+.FindDoctors__location, .FindDoctors__speciality {
     font-size: 18px;
-    margin: 0.5vh 0;
+    margin: 0.FindDoctors__5vh 0;
 }
 
-.appointment-btn {
+.FindDoctors__appointment-btn {
     height:7vh;
     width: 35vh;
     text-align: center;
     margin-top: 1vh;
-    padding: 0.8vh 2vh;
+    padding: 0.FindDoctors__8vh 2vh;
     font-size: 18px;
     background-color: #012f33;
     color: #fff;
@@ -173,6 +169,6 @@
     -o-transition: background-color 0.3s;
 }
 
-.appointment-btn:hover {
+.FindDoctors__appointment-btn:hover {
     background-color: #025157;
 }

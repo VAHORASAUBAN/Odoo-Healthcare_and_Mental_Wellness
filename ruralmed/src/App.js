@@ -1,17 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import NavBar from './components/navbar';
-import Appointments from './components/Appointments';
-import Dashboard from './components/DoctorDashboard';
-import Patients from './components/Patients';
-import Login from './components/DrPatientLogin';
-import ForgotPassword from './components/ForgotPassword';
-import ChangePassword from './components/PasswordChange';
-import Signup from './components/SignUp';  // Import your Signup component
+import Appointments from './Doctors/Appointments';
+import Dashboard from './Doctors/DoctorDashboard';
+import Patients from './Doctors/Patients';
+import Login from './Doctors/DrPatientLogin';
+import ForgotPassword from './Doctors/ForgotPassword';
+import ChangePassword from './Doctors/PasswordChange';
+import Signup from './Doctors/SignUp';  // Import your Signup component
 import './components/navbar.css';
-import ResetPassword from './components/ResetPassword';
-import Profile from './components/Profile';
-import PatientDetails from './components/PatientDetails';
+import ResetPassword from './Doctors/ResetPassword';
+import Profile from './Doctors/Profile';
+import PatientDetails from './Doctors/PatientDetails';
+import FindDoctors from './patients/FindDoctors';
 
 function App() {
   const location = useLocation();
@@ -29,7 +30,7 @@ function App() {
     // Apply a different class name if on any of the authentication-related pages
     <div className={isAuthPage ? 'auth-container' : 'containers'}>
       {/* Only render NavBar if not on the authentication-related pages */}
-      {!isAuthPage && <NavBar />}
+    {/* //   {!isAuthPage && <NavBar />} */}
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/appointments" element={<Appointments />} />
@@ -41,6 +42,7 @@ function App() {
         <Route path="/resetpassword" element={<ResetPassword />} />  
         <Route path="/profile" element={<Profile />} />  
         <Route path="/patientdetails" element={<PatientDetails />} />  
+        <Route path="/finddoctor" element={<FindDoctors />} />  
         {/* Add other routes as necessary */}
       </Routes>
     </div>

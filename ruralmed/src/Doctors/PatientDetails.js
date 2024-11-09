@@ -1,8 +1,11 @@
 import React from 'react';
 import './PatientDetails.css'
+import NavBar from '../components/navbar'
 
 const PatientDetails = () => {
   return (
+    <>
+    <NavBar />
     <div className="rightContainer">
       <div className="header">
         <h2>Patient Details - John Smith</h2>
@@ -77,6 +80,7 @@ const PatientDetails = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
