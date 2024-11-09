@@ -1,6 +1,6 @@
 // Appointments.js
 import React from 'react';
-import './appointments.css'; // Ensure you have the appropriate styles for this component
+import '../App.css'; 
 
 function Appointments() {
   return (
