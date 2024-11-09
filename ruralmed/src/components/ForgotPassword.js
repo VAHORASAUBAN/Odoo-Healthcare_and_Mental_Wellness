@@ -57,9 +57,7 @@ const ForgotPassword = () => {
               />
             </div>
             <div>
-              <button type="submit" className="btn btn-lg btn-dark rounded-0">
-                Submit Email
-              </button>
+            <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </form>
         </div>
