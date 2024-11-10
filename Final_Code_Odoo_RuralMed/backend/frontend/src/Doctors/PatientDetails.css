@@ -1,0 +1,163 @@
+.pdetails__profile-icon {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+.pdetails__profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #65cccc;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+.pdetails__profile-pic:hover {
+    opacity: 0.pdetails__8;
+}
+
+.pdetails__profile-icon .pdetails__dropdown {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    z-index: 100;
+}
+
+.pdetails__profile-icon:hover .pdetails__dropdown {
+    display: block;
+}
+
+.pdetails__profile-icon .pdetails__dropdown ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.pdetails__profile-icon .pdetails__dropdown ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+}
+
+.pdetails__profile-icon .pdetails__dropdown ul li:hover {
+    background-color: #f0f0f0;
+}
+
+.pdetails__rightContainer {
+    padding: 20px;
+    width: 84%;
+    background-color: #f8f9fa;
+}
+
+.pdetails__header h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.pdetails__patient-details-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pdetails__patient-details-section,
+.pdetails__appointment-history-section,
+.pdetails__prescription-history-section,
+.pdetails__messages-notes-section,
+.pdetails__upcoming-appointments-section,
+.pdetails__doctor-actions-section {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.pdetails__details-item,
+.pdetails__appointment-item,
+.pdetails__prescription-item,
+.pdetails__message-item {
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    resize: none;
+    background-color: #f8f9fa;
+}
+
+textarea:focus {
+    border-color: #65cccc;
+    outline: none;
+}
+
+/* Compact Section */
+.pdetails__compact-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Styling for smaller sections */
+.pdetails__appointment-history-section,
+.pdetails__prescription-history-section {
+    width: 48%;
+}
+
+.pdetails__messages-notes-section,
+.pdetails__upcoming-appointments-section {
+    width: 48%;
+}
+
+/* Smaller Cards */
+.pdetails__details-item,
+.pdetails__appointment-item,
+.pdetails__prescription-item,
+.pdetails__message-item {
+    background-color: #e3f2fd;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .pdetails__compact-section {
+        flex-direction: column;
+    }
+
+    .pdetails__appointment-history-section,
+    .pdetails__prescription-history-section,
+    .pdetails__messages-notes-section,
+    .pdetails__upcoming-appointments-section {
+        width: 100%;
+    }
+}

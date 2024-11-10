@@ -1,0 +1,369 @@
+.profile-icon {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 100;
+    cursor: pointer;
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #65cccc; /* Optional: a border around the profile image */
+    transition: all 0.3s ease;
+}
+
+.profile-pic:hover {
+    opacity: 0.8; /* Hover effect for the profile picture */
+}
+
+/* Dropdown menu */
+.profile-icon .dropdown {
+    display: none;
+    position: absolute;
+    top: 20px; 
+    right: 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 180px;
+    z-index: 100;
+}
+
+.profile-icon:hover .dropdown {
+    display: block;
+}
+
+/* Dropdown menu items */
+.profile-icon .dropdown ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.rightContainer {
+    padding: 20px;
+    width: 84%;
+    background-color: #f8f9fa;
+
+}
+
+.header h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.info-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.upcoming-appointments {
+    background-color: #fff3e0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.recent-appointments
+{
+    background-color: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Calendar and Notification Section */
+.calendar-notification-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.calendar-section, .notifications-section {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-section h3, .notifications-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+/* Calendar and Notification Section */
+.calendar-notification-section {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px; 
+    padding: 15px;
+}
+
+.calendar-section, .notifications-section {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-section h3, .notifications-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Calendar Styling */
+.calendar {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #e3f2fd;
+    border-radius: 8px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.calendar-grid div {
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-grid div:hover {
+    background-color: #bbdefb;
+    cursor: pointer;
+}
+
+.calendar h3 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Styling for the empty days */
+.calendar-grid .empty-day {
+    background-color: transparent; /* No background */
+    box-shadow: none; /* No shadow */
+    pointer-events: none; /* Prevent interaction */
+    cursor: default; /* No pointer cursor */
+}
+
+/* Notifications Section */
+.notifications-section {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.notification-item {
+    background-color: #f1f8e9;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.notification-item:hover {
+    background-color: #dcedc8;
+}
+/* Doctors Section */
+.doctors-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px; /* More rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Deeper shadow for a more elevated look */
+    margin-bottom: 20px;
+}
+
+.doctors-section h3 {
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Individual Doctor Item */
+.doctor-item {
+    background-color: #e8eaf6;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 12px; /* Space between items */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.2s ease; /* Smooth hover effect */
+}
+
+.doctor-item:hover {
+    background-color: #bbdefb;
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.doctor-item i {
+    font-size: 18px; /* Icon size */
+    color: #4caf50;
+}
+
+.doctor-item span {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Patient Details Section */
+.patient-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.patient-details .detail-item {
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s, border-color 0.3s ease;
+}
+
+.patient-details .detail-item:hover {
+    background-color: #e3f2fd;
+    border-color: #65cccc;
+}
+
+.patient-details .detail-item strong {
+    color: #000;
+    font-weight: 600;
+}
+
+.patient-details .detail-item .label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #777;
+    margin-right: 10px;
+}
+
+/* Add some icons for patient details */
+.detail-item i {
+    margin-right: 8px;
+    color: #65cccc;
+    font-size: 18px;
+}
+
+/* Header for patient details */
+.header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Diagnosis Section Styling */
+.diagnosis {
+    background-color: #e3f2fd;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.diagnosis h3 {
+    font-size: 20px;
+    color: #1c313a;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Individual diagnosis items */
+.diagnosis-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #333;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.diagnosis-item:hover {
+    background-color: #bbdefb;
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+/* Medication Section Styling */
+.medication {
+    background-color: #fff3e0;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.medication h3 {
+    font-size: 20px;
+    color: #ff7043;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Individual medication items */
+.medication-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #333;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.medication-item:hover {
+    background-color: #ffe0b2;
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+/* Icons for Diagnosis and Medication */
+.diagnosis-item::before, .medication-item::before {
+    content: "\f0f1"; /* Default Font Awesome icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: 8px;
+    font-size: 18px;
+    color: #1c313a;
+}
+
+.diagnosis-item:hover::before, .medication-item:hover::before {
+    color: #bbdefb;
+}

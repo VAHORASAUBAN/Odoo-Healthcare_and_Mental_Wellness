@@ -1,0 +1,115 @@
+.rightcontainer{
+    width: 100%;
+    margin: 2vh;
+}
+
+.background{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+}
+
+.background img{
+    position: fixed;
+    width: 100%;
+    height: auto;
+}
+
+.profile{
+    display: flex;
+    /* flex-direction: row; */
+    width: 100%;
+    justify-content: end;
+    cursor: pointer;
+}
+
+.profile img{
+    height: 6vh;
+    width: auto;
+}
+
+.profile p{
+    margin: .9vh 2vh 0 0;
+    font-size: 3.5vh;
+}
+
+.header{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.search input{
+    width: 45vh;
+    height: 5vh;
+    padding: 3vh;
+}
+
+.search input::placeholder{
+    font-size: 20px;
+    color: #000000;
+}
+
+.search button{
+    margin-top: 3vh;
+    height: 6vh;
+    width: 20vh;
+    background: #012f33;
+    border: #012f33;
+    color: #FFFFFF;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.main-header p{
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.patientContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: start;
+    margin: 5vh 0 0 5vh;
+    padding: 5vh;
+    border: 1px solid #012f33;
+    border-radius: 30px;
+    background: #012f33;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.patient{
+    height: 30vh;
+    width: 37vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 3vh;
+    align-items: center;
+    border: 1px solid #65cccc;
+    background: #ffffff;
+    border-radius: 30px;
+    padding: 5vh;
+    cursor: pointer ;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+}
+
+.patient img{
+    width: 18vh;
+    height: auto;
+    margin-bottom: 2vh;
+}
+
+.patient p{
+    font-size: 20px;
+}
